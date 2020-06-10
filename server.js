@@ -1,6 +1,9 @@
 const express = require('express')
+var cors = require('cors')
 const app = express()
 const port = 3000
+
+app.use(cors())
 
 app.get('/', (req, res) => res.send('server up'))
 
@@ -58,7 +61,7 @@ app.get('/service_1', (req, res) => {
     else{
       res.json({
         status:false,
-        messae:'invalid arg'
+        message:'invalid arg'
       })
     }
   } else {
@@ -90,8 +93,8 @@ app.get('/service_2', (req, res) => {
       450,
     ],
     'farine ordinaire' : [13,25,50,75,100,125,250],
-    'maizena' : [20,45,90,135,180,225,450],
-    'riz' : [11,22,45,70,90,115,230],
+    'riz' : [20,45,90,135,180,225,450],
+    'maizena' : [11,22,45,70,90,115,230],
     'couscous' : [20,40,80,120,160,200,400],
     'cacao' : [12,25,50,75,100,125,250],
     'amande poudre' :[12,25,50,75,100,125,250],
